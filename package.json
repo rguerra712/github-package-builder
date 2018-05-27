@@ -1,0 +1,17 @@
+{
+  "name": "github-package-builder",
+  "version": "1.0.0",
+  "description": "Initialize an npm package based on a github repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "R. Stephen Guerra",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "github-api": "^3.0.0",
+    "mocha": "^5.2.0",
+    "parse-github-url": "^1.0.2"
+  }
+}
