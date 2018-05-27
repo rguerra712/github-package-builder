@@ -1,6 +1,6 @@
 {
   "name": "github-package-builder",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Build an NPM package.json from details based on the github repo",
   "main": "index.js",
   "scripts": {
