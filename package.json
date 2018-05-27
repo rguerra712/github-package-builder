@@ -4,7 +4,8 @@
   "description": "Initialize an npm package based on a github repo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
+    "test": "${workspaceFolder}/node_modules/mocha/bin/_mocha -u tdd --timeout 999999 --colors ${workspaceFolder}/test"
   },
   "author": "R. Stephen Guerra",
   "license": "MIT",
