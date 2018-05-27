@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 (() => {
     'use strict';
 
@@ -7,10 +9,14 @@
     const githubClient = require('./lib/github-client');
     const packageBuilder = require('./lib/package-builder');
 
-    let onError = error => console.error(error);
-    const packagePath = path.join(__dirname, 'package.json');
+    let onError = error => {
+        console.error(error);
+        process.exit(1);
+    };
+    const packagePath = path.join('./', 'package.json');
+    console.log(`creating package.config based on local .git folder and package folder found at ${packagePath}`);
     if (!fs.existsSync(packagePath)) {
-        throw new Error(`could not find package.json at local path ${packagePath}`);
+        error(`could not find package.json at local path ${packagePath}`);
     }
     fs.readFile(packagePath, {
         encoding: 'utf8'
@@ -26,6 +32,7 @@
                         fs.writeFile(packagePath, packageJson, {
                             encoding: 'utf8'
                         });
+                        console.log('package.config created!');
                     })
                     .catch(onError);
             })
