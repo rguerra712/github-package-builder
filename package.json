@@ -1,6 +1,6 @@
 {
   "name": "github-package-builder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Initialize an npm package based on a github repo",
   "main": "index.js",
   "scripts": {
